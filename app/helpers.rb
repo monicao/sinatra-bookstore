@@ -8,4 +8,9 @@ helpers do
   def number_to_currency(number)
     "$#{number / 100.0}"
   end
+
+  def button_primary(label, path)
+    '<a class="btn btn-primary" href="' + path +' ">' + label + '</a>'
+  end
+
 end
