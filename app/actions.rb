@@ -7,7 +7,7 @@ end
 post '/admin/products' do
   @product = Product.create(name: params[:name], price_in_cents: params[:price_in_cents])
   if @product.persisted?
-    redirect '/products'
+    redirect '/admin/products'
   else
     erb :'products/new'
   end
