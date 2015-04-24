@@ -20,3 +20,15 @@ desc 'Retrieves the current schema version number'
 task "db:version" do
   puts "Current version: #{ActiveRecord::Migrator.current_version}"
 end
+
+desc "generate dummy data for the app"
+task "db:populate" do
+  puts "Generating dummy data..."
+  Product.delete_all
+  Product.create!(name: "How to avoid large ships", price_in_cents: 19999)
+  Product.create!(name: "Fifty Shades of Grey", price_in_cents: 788)
+  Product.create!(name: "South", price_in_cents: 1699)
+
+  User.delete_all
+  User.create!(username: "mochromatic", password: "secret")
+end
