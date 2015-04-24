@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150327013700) do
+ActiveRecord::Schema.define(version: 20150327093400) do
 
+  create_table "orders", force: true do |t|
+    t.integer "user_id"
+    t.integer "product_id"
+  end
+
+  create_table "products", force: true do |t|
+    t.string  "name"
+    t.integer "price_in_cents"
+  end
+
+  create_table "users", force: true do |t|
+    t.string "username"
+    t.string "password"
+  end
 
 end
