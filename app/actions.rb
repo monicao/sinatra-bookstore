@@ -47,3 +47,8 @@ get '/admin/products/:id/edit' do
   @product = Product.find(params[:id])
   erb :'products/edit'
 end
+
+get '/api/products' do
+  @products = Product.all
+  @products.to_json
+end
