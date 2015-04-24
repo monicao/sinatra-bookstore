@@ -19,3 +19,9 @@ get '/admin/products' do
   @products = Product.all
   erb :'products/index'
 end
+
+get '/admin/products/:id/edit' do
+  # params[:id] will be the id extracted from the url
+  @product = Product.find(params[:id])
+  erb :'products/edit'
+end

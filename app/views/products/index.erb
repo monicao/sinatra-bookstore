@@ -1,5 +1,5 @@
 <h1>Products</h1>
 
 <% @products.each do |product| %>
-  <%= product.name %>
+  <p><%= product.name %> <a href="/admin/products/<%= product.id %>/edit">Edit</a></p>
 <% end %>
