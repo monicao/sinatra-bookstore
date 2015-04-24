@@ -1,5 +1,9 @@
 <h1>Products</h1>
 
 <% @products.each do |product| %>
-  <p><%= product.name %> <a href="/admin/products/<%= product.id %>/edit">Edit</a></p>
+  <p>
+    <%= product.name %>
+    <%# $<%= product.price_in_cents / 100.0 %>
+    <a href="/admin/products/<%= product.id %>/edit">Edit</a>
+  </p>
 <% end %>
