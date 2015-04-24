@@ -20,8 +20,11 @@ require_relative './helpers'
 # Actions
 
 get '/admin/products/new' do
-  @current_user = User.first
-  erb :'products/new'
+  if current_user
+    erb :'products/new'
+  else
+    "You should be logged in."
+  end
 end
 
 post '/admin/products' do
