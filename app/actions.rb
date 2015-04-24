@@ -1,5 +1,24 @@
 # app/actions.rb
 
+
+# Helpers
+
+# You can use helpers in a block here.
+# helpers do
+# 
+# end
+
+# If you have a lot of helpers, you can keep things organized by
+# moving the helpers to a separate file
+# You can even break up your helpers in several files if needed
+
+# Require all helpers from /app/helpers.rb
+require_relative './helpers'
+
+
+
+# Actions
+
 get '/admin/products/new' do
   @current_user = User.first
   erb :'products/new'
