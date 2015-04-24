@@ -4,6 +4,7 @@
   <p>
     <%= product.name %>
     <%# $<%= product.price_in_cents / 100.0 %>
+    <%= product.pretty_price %>
     <a href="/admin/products/<%= product.id %>/edit">Edit</a>
   </p>
 <% end %>
