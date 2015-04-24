@@ -1,6 +1,7 @@
 # app/actions.rb
 
 get '/admin/products/new' do
+  @current_user = User.first
   erb :'products/new'
 end
 
