@@ -16,10 +16,10 @@ We are building an application for a company that sells books online. We are sta
   - ex: I want to test out a model feature without using the UI. (create product validations)
   - remember to reload if code changes
 - assets and public folder
-  - ex: I want to use twitter bootstrap with my app
+  - ex: I want to use the bootstrap css framework with my app
 - layout
-  - ex: I want to add a nav bar to the products page
-  - ex: I want to have a different layout for my home page (no nav bar)
+  - ex: I want to add a nav bar to the products index page
+  - ex: I want to create a home page (no nav bar), different layout
 - view helpers
   - ex: number_to_currency
 - action helpers
