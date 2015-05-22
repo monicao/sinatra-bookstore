@@ -16,10 +16,10 @@ We are building an application for a company that sells books online. We are sta
   - ex: I want to test out a model feature without using the UI. (create product validations)
   - remember to reload if code changes
 - assets and public folder
-  - ex: I want to use the bootstrap css framework with my app
+  - ex: i want to use the bootstrap css framework with my app
 - layout
-  - ex: I want to add a nav bar to the products index page
-  - ex: I want to create a home page (no nav bar), different layout
+  - ex: i want to add a nav bar to the products index page
+  - ex: i want to create a home page (no nav bar), different layout
 - rendering json
   - ex: I want to get a list of all products in JSON format for my API
 - view helpers
