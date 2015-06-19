@@ -23,6 +23,12 @@ get '/admin/products' do
   erb :'products/index'
 end
 
+get '/api/products' do
+  @products = Product.all
+  content_type 'application/json'
+  @products.to_json
+end
+
 # Fake login action. Used for demo purposes.
 # It doesn't really check the email and password, just logs in the user with id=1
 # Also it does not follow the REST standard. Should be POST instead of GET.
