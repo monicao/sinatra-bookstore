@@ -1,4 +1,5 @@
 # app/actions.rb
+require_relative 'view_helpers'
 
 get '/' do
   erb :home
