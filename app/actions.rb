@@ -16,12 +16,27 @@ post '/admin/products' do
   else
     erb :'products/new', layout: :admin_layout
   end
-
 end
+
+get '/admin/products/:id/edit' do
+  @product = Product.find(params[:id])
+  erb :'products/edit', layout: :admin_layout
+end
+
+put '/admin/products/:id' do
+  @product = Product.find(params[:id])
+  # TODO: handle validation
+  @product.update_attributes(
+    name: params[:name],
+    price_in_cents: params[:price_in_cents]
+  )
+  redirect '/admin/products'
+end
+
 
 get '/admin/products' do
   @products = Product.all
-  erb :'products/index'
+  erb :'products/index', layout: :admin_layout
 end
 
 get '/api/products' do

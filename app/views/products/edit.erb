@@ -1,8 +1,9 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <p> Create a new product.</p>
-      <form method="POST" action="/admin/products">
+      <p> Edit product.</p>
+      <form method="POST" action="/admin/products/<%= @product.id if @product %>">
+        <input type="hidden" name="_method" value="put">
         <%= erb :"products/_form" %>
       </form>
     </div>
