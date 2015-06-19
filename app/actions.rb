@@ -1,7 +1,11 @@
 # app/actions.rb
 
+get '/' do
+  erb :home
+end
+
 get '/admin/products/new' do
-  erb :'products/new'
+  erb :'products/new', layout: :admin_layout
 end
 
 post '/admin/products' do
@@ -9,7 +13,7 @@ post '/admin/products' do
   if @product.persisted?
     redirect '/admin/products'
   else
-    erb :'products/new'
+    erb :'products/new', layout: :admin_layout
   end
 
 end
