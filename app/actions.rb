@@ -28,6 +28,7 @@ post '/admin/products' do
   require_user
   @product = Product.create(name: params[:name], price_in_cents: params[:price_in_cents])
   if @product.persisted?
+    flash[:message] = "Product #{@product.name} created successfully."
     redirect '/admin/products'
   else
     erb :'products/new', layout: :admin

@@ -1,5 +1,7 @@
 <h1>Products</h1>
-
+<% if flash[:message] %>
+  <div class="alert alert-success" role="alert"><%= flash[:message] %></div>
+<% end %>
 <% @products.each do |product| %>
   <p><%= product.name %> $<%= cents_to_dollars(product.price_in_cents) %></p>
 <% end %>
