@@ -1,7 +1,11 @@
 # app/actions.rb
 
+get '/' do
+  erb :'home'
+end
+
 get '/admin/products/new' do
-  erb :'products/new'
+  erb :'products/new', layout: :admin
 end
 
 post '/admin/products' do
@@ -9,14 +13,14 @@ post '/admin/products' do
   if @product.persisted?
     redirect '/admin/products'
   else
-    erb :'products/new'
+    erb :'products/new', layout: :admin
   end
 
 end
 
 get '/admin/products' do
   @products = Product.all
-  erb :'products/index'
+  erb :'products/index', layout: :admin
 end
 
 # Fake login action. Used for demo purposes.
