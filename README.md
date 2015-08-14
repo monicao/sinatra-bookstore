@@ -11,6 +11,7 @@ We are building an application for a company that sells books online. We are sta
 - generating dummy data
   - ex: I want to be able to generate products and users quickly (not manually)
   - how to run rake tasks on heroku
+    Example: heroku run rake db:seed
 - tux
   - ex: I want to see all the products in my database
   - ex: I want to test out a model feature without using the UI. (create product validations)
