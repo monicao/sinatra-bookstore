@@ -1,0 +1,7 @@
+<h1>Products</h1>
+
+<%= erb :"/shared/message" %>
+
+<% @products.each do |product| %>
+  <p><%= product.name %> <%= number_to_currency(product.price_in_cents) %></p>
+<% end %>

@@ -1,7 +1,17 @@
 # app/actions.rb
+helpers do
+  def number_to_currency(price_in_cents)
+    "$#{price_in_cents / 100.0}"
+  end
+end
+
+get '/products' do
+  @products = Product.all
+  erb :'front/products/index', layout: :front_layout
+end
 
 get '/admin/products/new' do
-  erb :'products/new'
+  erb :'admin/products/new', layout: :'admin_layout'
 end
 
 post '/admin/products' do
@@ -9,14 +19,22 @@ post '/admin/products' do
   if @product.persisted?
     redirect '/admin/products'
   else
-    erb :'products/new'
+    erb :'admin/products/new', layout: :'admin_layout'
   end
 
 end
 
 get '/admin/products' do
+  @message = "This is a message"
   @products = Product.all
-  erb :'products/index'
+  erb :'admin/products/index', layout: :'admin_layout'
+end
+
+# JSON API endpoint
+get '/api/products' do
+  @products = Product.all
+  products_json = @products.to_json
+  body products_json
 end
 
 # Fake login action. Used for demo purposes.
