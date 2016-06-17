@@ -23,8 +23,9 @@ ActiveRecord::Schema.define(version: 20150327093400) do
   end
 
   create_table "users", force: true do |t|
-    t.string "email"
-    t.string "password"
+    t.string  "email"
+    t.string  "password"
+    t.boolean "is_admin", default: false
   end
 
 end

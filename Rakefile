@@ -20,3 +20,9 @@ desc 'Retrieves the current schema version number'
 task "db:version" do
   puts "Current version: #{ActiveRecord::Migrator.current_version}"
 end
+
+desc 'Populate the database with dummy data'
+task "db:populate" do
+  Product.create!(name: "The Mad Hatter's Hat", price_in_cents: 99999999)
+  Product.create!(name: "Cat Sweater", price_in_cents: 2599)
+end
