@@ -1,5 +1,11 @@
 # app/actions.rb
 
+helpers do
+  def number_to_currency(number, symbol)
+    "#{symbol}#{number / 100.0}"
+  end
+end
+
 get '/admin/products/new' do
   erb :'products/new'
 end
