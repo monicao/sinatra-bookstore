@@ -10,6 +10,12 @@ get '/admin/products/new' do
   erb :'products/new'
 end
 
+# /admin/products/12/edit
+get '/admin/products/:id/edit' do
+  @product = Product.find(params[:id])
+  erb :'products/edit'
+end
+
 post '/admin/products' do
   @product = Product.create(name: params[:name], price_in_cents: params[:price_in_cents])
   if @product.persisted?
